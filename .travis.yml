@@ -1,8 +1,7 @@
-install:
-  - nuget restore ./Source/Funky.sln
-  - nuget install NUnit.ConsoleRunner -Version 3.6.0 -OutputDirectory nunit-runner
+
 language: csharp
+mono: none
+dotnet: 2.2.207
 script:
-  - xbuild /p:Configuration=Release ./Source/Funky.sln
-  - mono ./nunit-runner/NUnit.ConsoleRunner.*/tools/nunit3-console.exe  ./Source/Funky.UnitTests/bin/Release/Funky.UnitTests.dll
-solution: ./Source/Funky.sln
+  - dotnet pack ./Source/Funky.sln -c Release
+  - dotnet test ./Source/Funky.sln -c Release
