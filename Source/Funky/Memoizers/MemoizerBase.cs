@@ -26,9 +26,9 @@ namespace Funky
 
         protected Dictionary<TKey, TCachedValue> Cache { get; }
 
-        protected ReaderWriterLockSlim CacheLock { get; }
+        protected Func<TKey, TValue> Func { get; }
 
-        protected Func<TKey, TValue> Func { get; private set; }
+        private ReaderWriterLockSlim CacheLock { get; }
 
         /// <summary>
         /// Gets or adds a key/value pair from the memoizer if it already exists.  Adds a key/value pair to the memoizer if it does not already exist.
