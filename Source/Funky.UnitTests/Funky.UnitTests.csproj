@@ -2,23 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>StrongNameKey.snk</AssemblyOriginatorKeyFile>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Version>2.1.2.0</Version>
-    <Authors>Eric Burcham</Authors>
-    <Company>N/A</Company>
-    <Description>A Library of Func Extensions.</Description>
-    <Copyright>Copyright (c) 2015 Eric Burcham</Copyright>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/ericburcham/Funky/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/ericburcham/Funky</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/ericburcham/Funky.git</RepositoryUrl>
-    <RepositoryType>Git</RepositoryType>
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentAssertions" Version="5.10.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
+    <PackageReference Include="FluentAssertions" Version="5.10.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
     <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.16.1">
       <PrivateAssets>all</PrivateAssets>

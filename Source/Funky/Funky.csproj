@@ -2,19 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>StrongNameKey.snk</AssemblyOriginatorKeyFile>
-    <Version>2.1.2.0</Version>
-    <Authors>Eric Burcham</Authors>
-    <Company>N/A</Company>
     <Description>A Library of Func Extensions.</Description>
-    <Copyright>Copyright (c) 2015 Eric Burcham</Copyright>
     <PackageLicenseUrl>https://raw.githubusercontent.com/ericburcham/Funky/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/ericburcham/Funky</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/ericburcham/Funky.git</RepositoryUrl>
-    <RepositoryType>Git</RepositoryType>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
 </Project>

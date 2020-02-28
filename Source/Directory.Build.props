@@ -1,0 +1,20 @@
+<Project>
+
+  <PropertyGroup>
+    <Authors>Erich Burcham</Authors>
+    <Company>N/A</Company>
+    <Copyright>Copyright (c) 2015 Eric Burcham</Copyright>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Product>$(MSBuildProjectName)</Product>
+    <AssemblyName>$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>$(MSBuildProjectName)</RootNamespace>
+    <PackageProjectUrl>https://github.com/ericburcham/Funky</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ericburcham/Funky.git</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+	<Version>2.1.2</Version>
+  </PropertyGroup>
+  
+</Project>
