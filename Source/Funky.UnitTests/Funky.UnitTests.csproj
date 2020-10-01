@@ -3,6 +3,18 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <IsPackable>false</IsPackable>
+    <Authors>Eric Burcham</Authors>
+    <Product>Funky.UnitTests</Product>
+    <Company>N/A</Company>
+    <Copyright>Copyright (c) 2015 Eric Burcham</Copyright>
+    <PackageProjectUrl>https://github.com/ericburcham/Funky</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ericburcham/Funky.git</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/ericburcham/Funky/master/LICENSE</PackageLicenseUrl>
+    <PackageId>Funky.UnitTests</PackageId>
+    <Version>2.1.2</Version>
+    <PackageReleaseNotes />
+    <Description>A Library of Func Extensions Unit Tests</Description>
   </PropertyGroup>
 
   <ItemGroup>
