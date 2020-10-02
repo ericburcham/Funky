@@ -37,21 +37,12 @@ Task("Pack")
     .IsDependentOn("Test")
     .Does(() => 
     {
-        var settings1 = new DotNetCorePackSettings
+        var settings = new DotNetCorePackSettings
         {
             Configuration = "Release"
         };
 
-        var settings2 = new DotNetCorePackSettings
-        {
-            NoBuild = true,
-            Configuration = "Release",
-            OutputDirectory = "./artifacts/"
-        };
-
-        DotNetCorePack("./Source/Funky.sln", settings1);
-
-        DotNetCorePack("./Source/Funky.sln", settings2);
+        DotNetCorePack("./Source/Funky.sln", settings);
     });
 
 //////////////////////////////////////////////////////////////////////
