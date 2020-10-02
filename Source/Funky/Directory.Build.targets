@@ -1,0 +1,9 @@
+<Project>  
+  <Target Name="CopyNuGetPackage" AfterTargets="Pack">
+    <PropertyGroup>
+      <NuGetPackageSrcPath>$(MSBuildThisFileDirectory)bin\$(Configuration)\$(MSBuildProjectName).$(Version).nupkg</NuGetPackageSrcPath>
+      <NuGetPackageTargetPath>$(MSBuildThisFileDirectory)..\..\artifacts\$(Configuration)\$(MSBuildProjectName).$(Version).nupkg</NuGetPackageTargetPath>
+    </PropertyGroup>
+    <Copy SourceFiles="$(NuGetPackageSrcPath)" DestinationFiles="$(NuGetPackageTargetPath)" SkipUnchangedFiles="true"></Copy>
+  </Target>
+</Project>
