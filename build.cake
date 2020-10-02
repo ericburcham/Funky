@@ -39,7 +39,8 @@ Task("Pack")
     {
         var settings = new DotNetCorePackSettings
         {
-            Configuration = "Release"
+            Configuration = "Release",
+            NoBuild = true
         };
 
         DotNetCorePack("./Source/Funky.sln", settings);
