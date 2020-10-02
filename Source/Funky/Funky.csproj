@@ -11,7 +11,7 @@
     <PackageProjectUrl>https://github.com/ericburcham/Funky</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ericburcham/Funky.git</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
-    <AssemblyVersion>2.1.2.0</AssemblyVersion>
+    <AssemblyVersion>3.0.0.0</AssemblyVersion>
     <PackageId>Funky</PackageId>
   </PropertyGroup>
 
