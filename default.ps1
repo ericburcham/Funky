@@ -48,27 +48,27 @@ task ? -description "Writes task documentation to the console." {
 
 task BuildAllConfigurations -description "Builds all valid solution configurations." -depends BuildDebug, BuildRelease
 
-task BuildAllConfigurationsWithPrerequisites -description "Builds all valid solution configurations.  Runs prerequisites first." -depends RestorePackages, BuildDebug, BuildRelease
+task BuildAllConfigurationsWithPrerequisites -description "Builds all valid solution configurations.  Runs prerequisites first." -depends CleanAll, RestorePackages, BuildDebug, BuildRelease
 
 task BuildDebug -description "Builds Funky.sln in the debug configuration." {
     Invoke-Compile $SolutionFile "Debug" "Any CPU"
 }
 
-task BuildDebugWithPrerequisites -description "Builds Funky.sln in the debug configuration.  Runs prerequisite steps first." -depends RestorePackages, BuildDebug
+task BuildDebugWithPrerequisites -description "Builds Funky.sln in the debug configuration.  Runs prerequisite steps first." -depends CleanAll, RestorePackages, BuildDebug
 
 task BuildRelease -description "Builds Funky.sln in the release configuration." {
     Invoke-Compile $SolutionFile "Release" "Any CPU"
 }
 
-task BuildReleaseWithPrerequisites -description "Builds Funky.sln in the debug configuration.  Runs prerequisite steps first." -depends RestorePackages, BuildRelease
+task BuildReleaseWithPrerequisites -description "Builds Funky.sln in the debug configuration.  Runs prerequisite steps first." -depends CleanAll, RestorePackages, BuildRelease
 
-task CleanAll -description "Runs a git clean -xdf.  Prompts first if untracked files are found." {
+task CleanAll -description "Runs 'git clean -xdf.'  Prompts first if untracked files are found." {
     $gitStatus = (@(git status --porcelain) | Out-String)
 
     IF ($gitStatus.Contains("??"))
     {
-        Write-Host "About to delete any untracked files.  Press 'Y' to continue or any other key to cancel." -foregroundcolor "yellow"
-        $continue = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyUp").Character
+        Write-Host "About to delete any untracked files.  Press 'Y' to continue or any other key to cancel." -ForegroundColor "yellow"
+        $continue = $host.UI.RawUI.ReadKey().Character
         IF ($continue -ne "Y" -and $continue -ne "y")
         {
             Write-Error "CleanAll canceled."
@@ -93,7 +93,7 @@ task Pack -description "Packs Funky as a nuget package." {
     exec { & $nugetExe pack $reflectionsProject -OutputDirectory $packageDirectory -Prop Configuration=Release -Symbols }
 }
 
-task PackWithPrerequisites -description "Packs Funky as a nuget package.  Runs prerequisites first." -depends RestorePackages, BuildDebug, BuildRelease, Pack
+task PackWithPrerequisites -description "Packs Funky as a nuget package.  Runs prerequisites first." -depends CleanAll, RestorePackages, BuildDebug, BuildRelease, Pack
 
 task Push -description "Pushes Funky to nuget.org." {
     $packages = Get-ChildItem $packageDirectory\Funky.*.nupkg
@@ -103,7 +103,7 @@ task Push -description "Pushes Funky to nuget.org." {
     }
 }
 
-task PushWithPrerequisites -depends RestorePackages, BuildDebug, BuildRelease, Pack, Push -description "Pushes Relfections to nuget.org.  Runs prerequisites first."
+task PushWithPrerequisites -depends CleanAll, RestorePackages, BuildDebug, BuildRelease, Pack, Push -description "Pushes Relfections to nuget.org.  Runs prerequisites first."
 
 task RestorePackages -description "Restores all nuget packages in the solution." {
     exec { & $nugetExe restore $solutionFile }

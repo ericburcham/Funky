@@ -1,24 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Funky", "Funky\Funky.csproj", "{B134CF05-827A-4A11-A6F2-57CC98387562}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Funky.UnitTests", "Funky.UnitTests\Funky.UnitTests.csproj", "{0CA5C74F-C88A-46CA-968E-3706CF9A4010}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Funky.UnitTests", "Funky.UnitTests\Funky.UnitTests.csproj", "{0CA5C74F-C88A-46CA-968E-3706CF9A4010}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2FBA5771-ADB7-4C80-9492-0C1C6DDB6C85}"
 	ProjectSection(SolutionItems) = preProject
-		AssemblyVersionInfo.cs = AssemblyVersionInfo.cs
 		StrongNameKey.snk = StrongNameKey.snk
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3F231AE8-08EF-451D-927E-E538F15A562F}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Funky", "Funky\Funky.csproj", "{72F97B74-3104-4129-A5B7-7B1261A4EA8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,16 +18,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B134CF05-827A-4A11-A6F2-57CC98387562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B134CF05-827A-4A11-A6F2-57CC98387562}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B134CF05-827A-4A11-A6F2-57CC98387562}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B134CF05-827A-4A11-A6F2-57CC98387562}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0CA5C74F-C88A-46CA-968E-3706CF9A4010}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0CA5C74F-C88A-46CA-968E-3706CF9A4010}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CA5C74F-C88A-46CA-968E-3706CF9A4010}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CA5C74F-C88A-46CA-968E-3706CF9A4010}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72F97B74-3104-4129-A5B7-7B1261A4EA8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72F97B74-3104-4129-A5B7-7B1261A4EA8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72F97B74-3104-4129-A5B7-7B1261A4EA8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72F97B74-3104-4129-A5B7-7B1261A4EA8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {421097DC-1C40-461C-A7A7-8518D8372E28}
 	EndGlobalSection
 EndGlobal

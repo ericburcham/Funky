@@ -8,19 +8,18 @@ namespace Funky.UnitTests.Memoizers
     [TestFixture]
     public class FuncExtensionsTests
     {
-        private const int InvocationCount = 100;
-
-        private readonly object _callCountLock = new object();
+        private const int InvocationCount = 2;
 
         [Test]
         public void FuncMemoizedWithUnExpirableMemoizerShouldOnlyBeCalledOnceFromParallelForLoop()
         {
             // Arrange
             var callCount = 0;
+            var callCountLock = new object();
 
             Func<int, int> getValueSquared = i =>
             {
-                lock (_callCountLock)
+                lock (callCountLock)
                 {
                     callCount++;
                 }
@@ -42,10 +41,11 @@ namespace Funky.UnitTests.Memoizers
         {
             // Arrange
             var callCount = 0;
+            var callCountLock = new object();
 
             Func<int, int> getValueSquared = i =>
             {
-                lock (_callCountLock)
+                lock (callCountLock)
                 {
                     callCount++;
                 }
@@ -68,10 +68,11 @@ namespace Funky.UnitTests.Memoizers
         {
             // Arrange
             var callCount = 0;
+            var callCountLock = new object();
 
             Func<int, int, int> getProduct = (i, j) =>
                 {
-                    lock (_callCountLock)
+                    lock (callCountLock)
                     {
                         callCount++;
                     }
@@ -93,10 +94,11 @@ namespace Funky.UnitTests.Memoizers
         {
             // Arrange
             var callCount = 0;
+            var callCountLock = new object();
 
             Func<int, int, int, int> getProduct = (i, j, k) =>
                 {
-                    lock (_callCountLock)
+                    lock (callCountLock)
                     {
                         callCount++;
                     }
@@ -118,10 +120,11 @@ namespace Funky.UnitTests.Memoizers
         {
             // Arrange
             var callCount = 0;
+            var callCountLock = new object();
 
             Func<int, int, int, int, int> getProduct = (i, j, k, l) =>
                 {
-                    lock (_callCountLock)
+                    lock (callCountLock)
                     {
                         callCount++;
                     }
@@ -143,10 +146,11 @@ namespace Funky.UnitTests.Memoizers
         {
             // Arrange
             var callCount = 0;
+            var callCountLock = new object();
 
             Func<int, int, int, int, int, int> getProduct = (i, j, k, l, m) =>
                 {
-                    lock (_callCountLock)
+                    lock (callCountLock)
                     {
                         callCount++;
                     }
@@ -168,10 +172,11 @@ namespace Funky.UnitTests.Memoizers
         {
             // Arrange
             var callCount = 0;
+            var callCountLock = new object();
 
             Func<int, int, int, int, int, int, int> getProduct = (i, j, k, l, m, n) =>
                 {
-                    lock (_callCountLock)
+                    lock (callCountLock)
                     {
                         callCount++;
                     }
@@ -193,10 +198,11 @@ namespace Funky.UnitTests.Memoizers
         {
             // Arrange
             var callCount = 0;
+            var callCountLock = new object();
 
             Func<int, int, int, int, int, int, int, int> getProduct = (i, j, k, l, m, n, o) =>
                 {
-                    lock (_callCountLock)
+                    lock (callCountLock)
                     {
                         callCount++;
                     }
@@ -218,10 +224,11 @@ namespace Funky.UnitTests.Memoizers
         {
             // Arrange
             var callCount = 0;
+            var callCountLock = new object();
 
             Func<int, int, int, int, int, int, int, int, int> getProduct = (i, j, k, l, m, n, o, p) =>
                 {
-                    lock (_callCountLock)
+                    lock (callCountLock)
                     {
                         callCount++;
                     }
@@ -243,10 +250,11 @@ namespace Funky.UnitTests.Memoizers
         {
             // Arrange
             var callCount = 0;
+            var callCountLock = new object();
 
             Func<int, int, int, int, int, int, int, int, int, int> getProduct = (i, j, k, l, m, n, o, p, q) =>
                 {
-                    lock (_callCountLock)
+                    lock (callCountLock)
                     {
                         callCount++;
                     }
@@ -268,10 +276,11 @@ namespace Funky.UnitTests.Memoizers
         {
             // Arrange
             var callCount = 0;
+            var callCountLock = new object();
 
             Func<int, int, int, int, int, int, int, int, int, int, int> getProduct = (i, j, k, l, m, n, o, p, q, r) =>
                 {
-                    lock (_callCountLock)
+                    lock (callCountLock)
                     {
                         callCount++;
                     }
@@ -293,10 +302,11 @@ namespace Funky.UnitTests.Memoizers
         {
             // Arrange
             var callCount = 0;
+            var callCountLock = new object();
 
             Func<int, int, int, int, int, int, int, int, int, int, int, int> getProduct = (i, j, k, l, m, n, o, p, q, r, s) =>
             {
-                lock (_callCountLock)
+                lock (callCountLock)
                 {
                     callCount++;
                 }
@@ -318,10 +328,11 @@ namespace Funky.UnitTests.Memoizers
         {
             // Arrange
             var callCount = 0;
+            var callCountLock = new object();
 
             Func<int, int, int, int, int, int, int, int, int, int, int, int, int> getProduct = (i, j, k, l, m, n, o, p, q, r, s, t) =>
             {
-                lock (_callCountLock)
+                lock (callCountLock)
                 {
                     callCount++;
                 }
@@ -343,10 +354,11 @@ namespace Funky.UnitTests.Memoizers
         {
             // Arrange
             var callCount = 0;
+            var callCountLock = new object();
 
             Func<int, int, int, int, int, int, int, int, int, int, int, int, int, int> getProduct = (i, j, k, l, m, n, o, p, q, r, s, t, u) =>
             {
-                lock (_callCountLock)
+                lock (callCountLock)
                 {
                     callCount++;
                 }
@@ -368,10 +380,11 @@ namespace Funky.UnitTests.Memoizers
         {
             // Arrange
             var callCount = 0;
+            var callCountLock = new object();
 
             Func<int, int, int, int, int, int, int, int, int, int, int, int, int, int, int> getProduct = (i, j, k, l, m, n, o, p, q, r, s, t, u, v) =>
             {
-                lock (_callCountLock)
+                lock (callCountLock)
                 {
                     callCount++;
                 }
@@ -393,10 +406,11 @@ namespace Funky.UnitTests.Memoizers
         {
             // Arrange
             var callCount = 0;
+            var callCountLock = new object();
 
             Func<int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int> getProduct = (i, j, k, l, m, n, o, p, q, r, s, t, u, v, w) =>
             {
-                lock (_callCountLock)
+                lock (callCountLock)
                 {
                     callCount++;
                 }
@@ -418,10 +432,11 @@ namespace Funky.UnitTests.Memoizers
         {
             // Arrange
             var callCount = 0;
+            var callCountLock = new object();
 
             Func<int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int> getProduct = (i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x) =>
             {
-                lock (_callCountLock)
+                lock (callCountLock)
                 {
                     callCount++;
                 }
