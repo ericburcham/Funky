@@ -269,3 +269,6 @@ paket-files/
 __pycache__/
 *.pyc
 /Arrowhead.Pelican.API/appsettings.Development.json
+
+# Claude Code
+.claude/
