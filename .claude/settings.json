@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "If the file being edited is 'StrongNameKey.snk' or 'LICENSE', respond with: BLOCK: This file is protected and must not be modified. Otherwise, respond with: PASS"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -qE '\\.(cs|csproj)'; then dotnet test Source/Funky.sln --verbosity quiet; fi"
+          }
+        ]
+      }
+    ]
+  }
+}

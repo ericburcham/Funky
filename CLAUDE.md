@@ -18,10 +18,25 @@ dotnet test Source/Funky.sln
 # Run tests for a specific test (use --filter)
 dotnet test Source/Funky.sln --filter "FullyQualifiedName~FuncWith2InputsCanBeMemoized"
 
-# Full CI pipeline via Cake (clean, build, test, pack)
+# Full CI pipeline via Nuke (clean, restore, compile, test, pack)
+build.cmd          # Windows
+./build.sh         # Linux/macOS
+dotnet run --project build/_build.csproj
+
+# Run a specific Nuke target
+build.cmd --target Test
+dotnet run --project build/_build.csproj -- --target Test
+
+# Nuke via global tool
 dotnet tool restore
-dotnet cake
+nuke
 ```
+
+## Protected Files
+
+The following files are protected by Claude Code hooks and must not be modified:
+- `StrongNameKey.snk`
+- `LICENSE`
 
 ## Git Workflow
 

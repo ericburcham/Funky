@@ -258,6 +258,9 @@ paket-files/
 # FAKE - F# Make
 .fake/
 
+# Nuke Build
+.nuke/temp/
+
 # JetBrains Rider
 .idea/
 *.sln.iml
@@ -271,4 +274,7 @@ __pycache__/
 /Arrowhead.Pelican.API/appsettings.Development.json
 
 # Claude Code
-.claude/
+.claude/settings.local.json
+
+# Serena
+.serena/
