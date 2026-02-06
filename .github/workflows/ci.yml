@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     paths:
-      - 'src/**'
+      - 'Source/**'
       - 'build/**'
       - '*.sln'
       - '*.props'
@@ -12,7 +12,7 @@ on:
       - '.github/workflows/ci.yml'
   pull_request:
     paths:
-      - 'src/**'
+      - 'Source/**'
       - 'build/**'
       - '*.sln'
       - '*.props'
