@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Funky is a .NET library providing `Func<>` extension methods, primarily for **memoization** and **thread-safe locking**. It targets net48, netstandard2.1, net5.0, and net6.0.
+Funky is a .NET library providing `Func<>` extension methods, primarily for **memoization** and **thread-safe locking**. It targets net48, netstandard2.1, and net6.0.
 
 ## Build Commands
 
@@ -64,5 +64,5 @@ The `isExpirable` parameter on `Memoize()` selects between `Memoizer` (strong re
 
 - **NUnit** with **FluentAssertions**
 - Tests in `Source/Funky.UnitTests/`
-- Test targets: net5.0, net6.0 only
+- Test targets: net6.0 only
 - Tests verify thread-safety using `Parallel.For` loops
